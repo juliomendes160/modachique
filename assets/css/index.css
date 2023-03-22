@@ -1,11 +1,12 @@
-*{
-    
+.cabecalho .navegacao{
+    display: flex;
+    justify-content: space-around;
+    height: 30px;
 }
-
-.cabecalho{
-    
+.cabecalho .navegacao a{
+    display: flex;
 }
-
-.cabecalho svg:hover{
-    cursor: pointer;
+.cabecalho .navegacao a svg{
+    fill: black;
+    stroke: black;
 }
