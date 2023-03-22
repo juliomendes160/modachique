@@ -1,12 +1,12 @@
-.cabecalho .navegacao{
+.navegacao{
     display: flex;
     justify-content: space-around;
     height: 30px;
 }
-.cabecalho .navegacao a{
+.navegacao a{
     display: flex;
 }
-.cabecalho .navegacao a svg{
+.navegacao a svg{
     fill: black;
     stroke: black;
 }
