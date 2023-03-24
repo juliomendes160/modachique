@@ -1,7 +1,15 @@
+.cabecalho h1{
+    background-color: black;
+    color: white;
+
+    text-align: center;
+}
+
 .navegacao{
+    height: 30px;
+    
     display: flex;
     justify-content: space-around;
-    height: 30px;
 }
 .navegacao a{
     display: flex;
