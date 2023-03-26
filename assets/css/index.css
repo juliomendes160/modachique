@@ -1,20 +1,31 @@
-.cabecalho h1{
-    background-color: black;
-    color: white;
+body {
+    display: grid;
+    grid-template-rows: minmax(15vh,auto) minmax(70vh,auto) minmax(15vh,auto);
+}
 
-    text-align: center;
+.cabecalho{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.cabecalho h1{
+    font-size: 2em;
+    color: white;
+}
+
+.conteudo{
+    background-color:"";
 }
 
 .navegacao{
-    height: 30px;
-    
+    background-color: black;
     display: flex;
+    align-items: center;
     justify-content: space-around;
 }
-.navegacao a{
-    display: flex;
-}
-.navegacao a svg{
-    fill: black;
-    stroke: black;
+.navegacao svg{
+    height: 5vh;
+    fill: white;
+    stroke: white;
 }
