@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    console.log($("[data-navegacao], a"));
     $("[data-navegacao] a").click(function(e){
         e.preventDefault();
         $.ajax({url: this.href, success: function(result, status, xhr){
