@@ -16,6 +16,21 @@ body {
 
 .conteudo{
     background-color:"";
+    overflow: scroll;
+    height: 70vh;
+}
+
+.pagina{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5vh;
+}
+.pagina a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    background-color: lightgray;
+    padding: 3vh 0;
 }
 
 .navegacao{
