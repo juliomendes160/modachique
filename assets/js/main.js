@@ -1,19 +1,20 @@
 import '../../libs/js/jquery-v3.6.4-development.js';
-// http://127.0.0.1:5500/assets/html/start.html
 
-(function(){
-    if(location.pathname!="/" && location.pathname!="/index.html"){
-        localStorage.setItem("page", location.pathname);
-        location.href="/index.html";
-        return;
-    }
-
-    if(localStorage.getItem("page")!=null){
-        Buscar(localStorage.getItem("page"));
-        localStorage.clear();
-    }
-
+$(document).ready(function(){
     $(document).on("click", "a", Impedir);
+    
+    (function(){
+        if(location.pathname!="/" && location.pathname!="/index.html"){
+            localStorage.setItem("page", location.pathname);
+            location.href="/index.html";
+            return;
+        }
+    
+        if(localStorage.getItem("page")!=null){
+            Buscar(localStorage.getItem("page"));
+            localStorage.clear();
+        }
+    })()
     
     function Buscar(file){
         fetch(file)
@@ -32,4 +33,4 @@ import '../../libs/js/jquery-v3.6.4-development.js';
         event.preventDefault();
         Buscar($(this).attr("href"));
     }
-})();
+});
