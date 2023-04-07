@@ -6,7 +6,7 @@ $(document).ready(function(){
     (function(){
         if(location.pathname!="/" && location.pathname!="/index.html"){
             localStorage.setItem("page", location.pathname);
-            location.href="/index.html";
+            location.href="/";
             return;
         }
     
@@ -16,6 +16,11 @@ $(document).ready(function(){
         }
     })()
     
+    function Impedir(event){
+        event.preventDefault();
+        Buscar($(this).attr("href"));
+    }
+
     function Buscar(file){
         fetch(file)
         .then(response=>{
@@ -27,10 +32,5 @@ $(document).ready(function(){
             document.querySelector("main").outerHTML=html.querySelector("main").outerHTML;
             history.pushState({},"",file);
         })
-    }
-
-    function Impedir(event){
-        event.preventDefault();
-        Buscar($(this).attr("href"));
     }
 });
