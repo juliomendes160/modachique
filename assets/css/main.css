@@ -1,4 +1,4 @@
-body {
+.corpo {
     display: grid;
     grid-template-rows: minmax(15vh,auto) minmax(70vh,auto) minmax(15vh,auto);
 }
@@ -15,7 +15,6 @@ body {
 }
 
 .conteudo{
-    background-color:"";
     overflow: scroll;
     height: 70vh;
 }
