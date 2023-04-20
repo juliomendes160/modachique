@@ -1,4 +1,7 @@
-.corpo {
+@import url('../../libs/css/normalize-v8.0.1.css');
+@import url('../../libs/css/reset-v2.0.css');
+
+body{
     display: grid;
     grid-template-rows: minmax(15vh,auto) minmax(70vh,auto) minmax(15vh,auto);
 }
@@ -15,7 +18,7 @@
 }
 
 .conteudo{
-    overflow: scroll;
+    overflow-y: scroll;
     height: 70vh;
 }
 
