@@ -9764,7 +9764,6 @@ jQuery.extend( {
 					jqXHR.abort( "timeout" );
 				}, s.timeout );
 			}
-			// debugger;
 			try {
 				completed = false;
 				transport.send( requestHeaders, done );
@@ -10071,7 +10070,6 @@ jQuery.ajaxTransport( function( options ) {
 	if ( support.cors || xhrSupported && !options.crossDomain ) {
 		return {
 			send: function( headers, complete ) {
-				// debugger;
 				var i,
 					xhr = options.xhr();
 
@@ -10111,7 +10109,6 @@ jQuery.ajaxTransport( function( options ) {
 				}
 
 				// Callback
-				// debugger;
 				callback = function( type ) {
 					return function() {
 						if ( callback ) {
