@@ -16,6 +16,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: relative;
 }
 .cabecalho h1{
     font-size: 2em;
@@ -27,12 +28,12 @@ body{
     height: 70vh;
 }
 
-.pagina{
+.conteudo__pagina{
     display: flex;
     flex-direction: column;
     row-gap: 0.5vh;
 }
-.pagina a{
+.conteudo__pagina__links{
     text-decoration: none;
     color: var(--global-black);
     font-size: 1.5em;
@@ -41,13 +42,82 @@ body{
 }
 
 .navegacao{
-    background-color: var(--global-black);
+   background-color: black;
+   position: relative;
+}
+
+.navegacao__menu{
+    display: none;
+    background-color: white;
+    position: absolute;
+    bottom: 100%;
+    width: 100vw;
+    height: 85vh;
+    overflow-y: auto;
+}
+
+.navegacao__menu ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5vh;
+}
+
+.navegacao__menu a{
+    display: inherit;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    padding: 3vh 0;
+    background-color: lightgrey;
+}
+
+.navegacao__botoes{
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    height: 15vh;
 }
-.navegacao svg{
+
+.navegacao__botoes a{
+    display: flex
+}
+
+.navegacao__botoes svg{
     height: 5vh;
     fill: var(--global-white);
     stroke: var(--global-white);
+}
+
+.lista{
+   /* position: absolute;
+   height: 100vh;
+   width: 100vw;
+   background-color: white; */
+   /* position: absolute;
+   bottom: 100%; */
+}
+
+.navegacoes__funcoes{
+    /* background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; */
+}
+.navegacao__funcoes svg{
+    /* height: 5vh;
+    fill: var(--global-white);
+    stroke: var(--global-white); */
+}
+
+::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
 }

@@ -8,7 +8,7 @@ $(document).ready(async function(){
     await Search(SetHtml, root);
     await Search(SetMain, file);
     $("html").delay("slow").fadeIn();
-    $(document).on("click", "a", Load);
+    Ouvir();
 });
 
 async function Search(Callback, url){
@@ -35,4 +35,10 @@ function Load(event){
     event.preventDefault();
     path = root + $(this).attr("href");
     Search(SetMain, path);
+}
+
+function Ouvir(){
+    $(document).on("click", "[href='#menu']", function(){
+        $("[data-navegacao-menu]").fadeToggle();
+    });
 }
