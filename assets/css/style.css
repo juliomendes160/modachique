@@ -1,5 +1,5 @@
-@import url('../../libs/css/reset-v2.0.css');
 @import url('../../libs/css/normalize-v8.0.1.css');
+@import url('../../libs/css/reset-v2.0.css');
 
 :root{
     --global-black: black;
@@ -16,7 +16,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    position: relative;
 }
 .cabecalho h1{
     font-size: 2em;
@@ -56,6 +55,14 @@ body{
     overflow-y: auto;
 }
 
+.navegacao__menu h1{
+    font-size: 2em;
+    padding: 3vh 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
 .navegacao__menu ul{
     display: flex;
     flex-direction: column;
@@ -71,7 +78,12 @@ body{
     background-color: lightgrey;
 }
 
-.navegacao__botoes{
+.navegacao__menu a:hover{
+    background-color: white;
+    
+}
+
+.navegacao__funcao{
     background-color: black;
     display: flex;
     align-items: center;
@@ -79,11 +91,11 @@ body{
     height: 15vh;
 }
 
-.navegacao__botoes a{
+.navegacao__funcao a{
     display: flex
 }
 
-.navegacao__botoes svg{
+.navegacao__funcao svg{
     height: 5vh;
     fill: var(--global-white);
     stroke: var(--global-white);

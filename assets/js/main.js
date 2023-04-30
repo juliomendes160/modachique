@@ -1,14 +1,13 @@
 import '../../libs/js/jquery-v3.6.4-development.js';
 
-let path = location.pathname.split(/(^[/]+[a-z]+[/])/);
-let root = path[1];
-let file = path[2];
+const path = location.pathname.split(/(^[/]+[a-z]+[/])/);
+const root = path[1];
+const file = path[2];
 
 $(document).ready(async function(){
     await Search(SetHtml, root);
     await Search(SetMain, file);
-    $("html").delay("slow").fadeIn();
-    Ouvir();
+    Listen();
 });
 
 async function Search(Callback, url){
@@ -25,20 +24,36 @@ function SetHtml(url, html){
 function SetMain(url, html){
     $("main").html($(html).find("main").html());
     SetUrl(url);
+    if($("html").is(":hidden")) $("html").delay("slow").fadeToggle();
 }
 
 function SetUrl(url){
     history.pushState({},"", url);
 }
 
-function Load(event){
-    event.preventDefault();
-    path = root + $(this).attr("href");
-    Search(SetMain, path);
+function Listen(){
+    $(document).on("click", "[data-navegacao-menu] a", function(event){
+        event.preventDefault();
+        let url = root + $(this).attr("href");
+        Search(SetMain, url);
+        navegacao.menu();
+    });
+
+    $(document).on("click", "[data-navegacao-funcao] a", function(event){   
+        event.preventDefault();
+        navegacao[this.dataset.navegacaoFuncao]();
+    });
+
+    const navegacao = {
+        menu:  function(event) {
+            if($("[data-navegacao-menu]").is(":hidden")){
+                $("[data-navegacao-menu]").fadeIn();
+                $("[data-navegacao-menu]").scrollTop(0);
+            }
+            else{
+                $("[data-navegacao-menu]").fadeOut();
+            }
+        },
+    }
 }
 
-function Ouvir(){
-    $(document).on("click", "[href='#menu']", function(){
-        $("[data-navegacao-menu]").fadeToggle();
-    });
-}
