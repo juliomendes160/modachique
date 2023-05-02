@@ -17,18 +17,14 @@ async function Search(Callback, url){
 }
 
 function SetHtml(url, html){
-    SetUrl(url);
+    history.pushState({},"", url);
     $("html").replaceWith(html);
 }
 
 function SetMain(url, html){
     $("main").html($(html).find("main").html());
-    SetUrl(url);
-    if($("html").is(":hidden")) $("html").delay("slow").fadeToggle();
-}
-
-function SetUrl(url){
     history.pushState({},"", url);
+    if($("html").is(":hidden")) $("html").delay("slow").fadeToggle();
 }
 
 function Listen(){
@@ -36,16 +32,16 @@ function Listen(){
         event.preventDefault();
         let url = root + $(this).attr("href");
         Search(SetMain, url);
-        navegacao.menu();
+        navegacao.menu;
     });
 
     $(document).on("click", "[data-navegacao-funcao] a", function(event){   
         event.preventDefault();
-        navegacao[this.dataset.navegacaoFuncao]();
+        navegacao[this.dataset.navegacaoFuncao];
     });
 
     const navegacao = {
-        menu:  function(event) {
+        get menu() {
             if($("[data-navegacao-menu]").is(":hidden")){
                 $("[data-navegacao-menu]").fadeIn();
                 $("[data-navegacao-menu]").scrollTop(0);
@@ -56,4 +52,3 @@ function Listen(){
         },
     }
 }
-
