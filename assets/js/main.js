@@ -28,18 +28,6 @@ function SetMain(url, html){
 }
 
 function Listen(){
-    $(document).on("click", "[data-navegacao-menu] a", function(event){
-        event.preventDefault();
-        let url = root + $(this).attr("href");
-        Search(SetMain, url);
-        navegacao.menu;
-    });
-
-    $(document).on("click", "[data-navegacao-funcao] a", function(event){   
-        event.preventDefault();
-        navegacao[this.dataset.navegacaoFuncao];
-    });
-
     const navegacao = {
         get menu() {
             if($("[data-navegacao-menu]").is(":hidden")){
@@ -51,4 +39,16 @@ function Listen(){
             }
         },
     }
+    
+    $(document).on("click", "[data-navegacao-menu] a", function(event){
+        event.preventDefault();
+        let url = root + $(this).attr("href");
+        Search(SetMain, url);
+        navegacao.menu;
+    });
+
+    $(document).on("click", "[data-navegacao-funcao] a", function(event){   
+        event.preventDefault();
+        navegacao[this.dataset.navegacaoFuncao];
+    });
 }
