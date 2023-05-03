@@ -37,9 +37,10 @@ function Listen(){
             else{
                 $("[data-navegacao-menu]").fadeOut();
             }
+            $("[data-navegacao-funcao='menu']").children().toggle();
         },
     }
-    
+
     $(document).on("click", "[data-navegacao-menu] a", function(event){
         event.preventDefault();
         let url = root + $(this).attr("href");
@@ -47,7 +48,7 @@ function Listen(){
         navegacao.menu;
     });
 
-    $(document).on("click", "[data-navegacao-funcao] a", function(event){   
+    $(document).on("click", "[data-navegacao-funcao] a", async function(event){   
         event.preventDefault();
         navegacao[this.dataset.navegacaoFuncao];
     });
