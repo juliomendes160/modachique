@@ -32,24 +32,27 @@ function Listen(){
         get menu() {
             if($("[data-navegacao-menu]").is(":hidden")){
                 $("[data-navegacao-menu]").fadeIn();
-                $("[data-navegacao-menu]").scrollTop(0);
+                // $("[data-navegacao-menu]").scrollTop(0);
             }
             else{
                 $("[data-navegacao-menu]").fadeOut();
+                // $("[data-navegacao-menu-pesquisa]").fadeOut();
             }
-            $("[data-navegacao-funcao='menu']").children().toggle();
+            $("[data-navegacao-funcao='menu']").toggle();
         },
+        get pesquisa(){
+            $("[data-navegacao-menu-pesquisa]").fadeToggle();
+        }
     }
 
-    $(document).on("click", "[data-navegacao-menu] a", function(event){
+    $(document).on("click", "a", function(event){
         event.preventDefault();
         let url = root + $(this).attr("href");
         Search(SetMain, url);
         navegacao.menu;
     });
 
-    $(document).on("click", "[data-navegacao-funcao] a", async function(event){   
-        event.preventDefault();
+    $(document).on("click", "[data-navegacao-funcao]", function(event){
         navegacao[this.dataset.navegacaoFuncao];
     });
 }

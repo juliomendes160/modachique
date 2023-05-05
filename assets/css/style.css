@@ -6,9 +6,14 @@
     --global-white: white;
     --global-lightgray: lightgray;
 }
+
 body{
     display: grid;
     grid-template-rows: minmax(15vh,auto) minmax(70vh,auto) minmax(15vh,auto);
+}
+
+svg{
+    cursor: pointer;
 }
 
 .cabecalho{
@@ -55,7 +60,11 @@ body{
     overflow-y: auto;
 }
 
-.navegacao__menu h1{
+.navegacao__menu__cabecalho{
+    position: relative;
+}
+
+.navegacao__menu__cabecalho h1{
     font-size: 2em;
     padding: 3vh 0;
     text-align: center;
@@ -63,13 +72,29 @@ body{
     color: white;
 }
 
-.navegacao__menu ul{
+.navegacao__menu__cabecalho svg{
+    height: 5vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    fill: white;
+    padding: 3vh 5vw; 
+}
+
+.navegacao__menu__pesquisa input{
+    width: 100vw;
+    padding: 1vh 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.navegacao__menu__conteudo ul{
     display: flex;
     flex-direction: column;
     row-gap: 0.5vh;
 }
 
-.navegacao__menu a{
+.navegacao__menu__conteudo a{
     display: inherit;
     text-decoration: none;
     color: black;
@@ -78,9 +103,8 @@ body{
     background-color: lightgrey;
 }
 
-.navegacao__menu a:hover{
+.navegacao__menu__conteudo a:hover{
     background-color: white;
-    
 }
 
 .navegacao__funcao{
@@ -91,40 +115,14 @@ body{
     height: 15vh;
 }
 
-.navegacao__funcao a{
-    display: flex
-}
-
 .navegacao__funcao svg{
     height: 5vh;
-    fill: var(--global-white);
-    stroke: var(--global-white);
+    fill: white;
+    stroke: white;
 }
 
 .navegacao__funcao svg:nth-child(2){
     display: none;
-}
-
-
-.lista{
-   /* position: absolute;
-   height: 100vh;
-   width: 100vw;
-   background-color: white; */
-   /* position: absolute;
-   bottom: 100%; */
-}
-
-.navegacoes__funcoes{
-    /* background-color: red;
-    display: flex;
-    align-items: center;
-    justify-content: space-around; */
-}
-.navegacao__funcoes svg{
-    /* height: 5vh;
-    fill: var(--global-white);
-    stroke: var(--global-white); */
 }
 
 ::-webkit-scrollbar {
