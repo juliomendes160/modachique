@@ -81,8 +81,12 @@ svg{
     padding: 3vh 5vw; 
 }
 
+.navegacao__menu__pesquisa{
+    display: flex;
+    flex-direction: column;
+}
+
 .navegacao__menu__pesquisa input{
-    width: 100vw;
     padding: 1vh 0;
     font-size: 1.5em;
     text-align: center;

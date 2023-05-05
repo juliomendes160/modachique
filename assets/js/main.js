@@ -36,12 +36,13 @@ function Listen(){
             }
             else{
                 $("[data-navegacao-menu]").fadeOut();
-                // $("[data-navegacao-menu-pesquisa]").fadeOut();
+                $("[data-navegacao-menu-pesquisa]").fadeOut();
             }
             $("[data-navegacao-funcao='menu']").toggle();
         },
         get pesquisa(){
             $("[data-navegacao-menu-pesquisa]").fadeToggle();
+            $("[data-navegacao-menu-pesquisa] input").focus();
         }
     }
 
