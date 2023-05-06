@@ -35,8 +35,9 @@ function Listen(){
                 // $("[data-navegacao-menu]").scrollTop(0);
             }
             else{
-                $("[data-navegacao-menu]").fadeOut();
                 $("[data-navegacao-pesquisa]").fadeOut();
+                $("[data-navegacao-menu]").fadeOut();
+                $("[data-navegacao-menu]").css("overflow-y", "auto");
             }
             $("[data-navegacao-funcao='menu']").toggle();
         },
