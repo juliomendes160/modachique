@@ -29,20 +29,25 @@ function SetMain(url, html){
 
 function Listen(){
     const navegacao = {
-        get menu() {
+        menu: function() {
             if($("[data-navegacao-menu]").is(":hidden")){
                 $("[data-navegacao-menu]").fadeIn();
                 // $("[data-navegacao-menu]").scrollTop(0);
             }
             else{
                 $("[data-navegacao-menu]").fadeOut();
-                $("[data-navegacao-menu-pesquisa]").fadeOut();
+                $("[data-navegacao-pesquisa]").fadeOut();
             }
             $("[data-navegacao-funcao='menu']").toggle();
         },
-        get pesquisa(){
-            $("[data-navegacao-menu-pesquisa]").fadeToggle();
-            $("[data-navegacao-menu-pesquisa] input").focus();
+        pesquisa: function(){
+            $("[data-navegacao-pesquisa]").fadeToggle();
+            $("[data-navegacao-pesquisa] input").focus();
+            if($("[data-navegacao-menu]").css("overflow-y")=="auto"){
+                $("[data-navegacao-menu]").css("overflow-y", "hidden");
+            }else{
+                $("[data-navegacao-menu]").css("overflow-y", "auto");
+            }
         }
     }
 
@@ -50,10 +55,10 @@ function Listen(){
         event.preventDefault();
         let url = root + $(this).attr("href");
         Search(SetMain, url);
-        navegacao.menu;
+        navegacao.menu();
     });
 
     $(document).on("click", "[data-navegacao-funcao]", function(event){
-        navegacao[this.dataset.navegacaoFuncao];
+        navegacao[this.dataset.navegacaoFuncao]();
     });
 }

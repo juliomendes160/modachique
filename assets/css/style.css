@@ -50,6 +50,21 @@ svg{
    position: relative;
 }
 
+.navegacao__pesquisa{
+    position: absolute;
+    z-index: 1;
+    bottom: 89vh;
+    width: 100%;
+    display: none;
+}
+
+.navegacao__pesquisa input{
+    width: 83vw;
+    padding: 2vh 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
 .navegacao__menu{
     display: none;
     background-color: white;
@@ -79,17 +94,7 @@ svg{
     right: 0;
     fill: white;
     padding: 3vh 5vw; 
-}
-
-.navegacao__menu__pesquisa{
-    display: flex;
-    flex-direction: column;
-}
-
-.navegacao__menu__pesquisa input{
-    padding: 1vh 0;
-    font-size: 1.5em;
-    text-align: center;
+    z-index: 1;
 }
 
 .navegacao__menu__conteudo ul{
